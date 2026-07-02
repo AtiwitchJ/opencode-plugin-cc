@@ -23,9 +23,9 @@ test("opencode-companion.mjs --help prints usage", () => {
   assert.match(result.stdout, /Usage:/);
 });
 
-test("opencode-companion.mjs task reports an honest, detectable stub error", () => {
+test("opencode-companion.mjs task no longer reports a stub error", () => {
   const result = runCompanion(["task", "hello"]);
-  assert.equal(result.status, 1);
-  assert.match(result.stderr, /is a stub/i);
-  assert.equal(result.stdout, "");
+  const output = `${result.stdout}\n${result.stderr}`;
+  assert.doesNotMatch(output, /is a stub|not implemented/i);
+  assert.match(output, /OpenCode CLI|opencode|not found|missing/i);
 });

@@ -1,0 +1,24 @@
+{
+  "name": "opencode",
+  "version": "0.1.0",
+  "description": "Use OpenCode to review code or delegate tasks.",
+  "author": {
+    "name": "agents-plugin-cc"
+  },
+  "license": "Apache-2.0",
+  "keywords": ["opencode", "agent", "review", "delegation"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "OpenCode",
+    "shortDescription": "Delegate coding work to OpenCode.",
+    "longDescription": "Run OpenCode setup, reviews, tasks, status checks, results, cancellation, and transfer flows through the bundled companion runtime.",
+    "developerName": "agents-plugin-cc",
+    "category": "Productivity",
+    "capabilities": ["Code review", "Task delegation", "Background jobs"],
+    "defaultPrompt": [
+      "Review my local changes with OpenCode.",
+      "Ask OpenCode to investigate this bug.",
+      "Show OpenCode job status."
+    ]
+  }
+}

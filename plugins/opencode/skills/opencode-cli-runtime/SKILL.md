@@ -5,10 +5,19 @@ description: Operational guidance for calling the OpenCode CLI from this plugin'
 
 # OpenCode CLI runtime
 
-This is a scaffold skill. Once scripts/lib/opencode.mjs is implemented, replace this file with real
-operational notes covering:
+The OpenCode plugin wraps the local `opencode` CLI. The companion script is implemented and
+uses the same command surface in Claude Code and Codex.
 
-- The exact CLI invocation shape (e.g. \$binary run [flags] "<prompt>"\)
-- Authentication probe (e.g. \$binary profile\)
-- Session lifecycle (start, resume, fork)
-- Cancellation
+## Binary
+
+- Command name: `opencode`
+- Authentication: run the provider login required by your OpenCode install
+
+## Invocation
+
+- Availability probe: `opencode --version`
+- Task/review execution: `opencode run <prompt>`
+- Setup output: `node scripts/opencode-companion.mjs setup --json`
+
+If `opencode` is missing or unauthenticated, setup reports actionable next steps. Runtime
+commands should not describe the companion as a placeholder.
