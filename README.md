@@ -1,6 +1,6 @@
-# OpenCode plugin for Claude Code
+# OpenCode plugin for Claude Code and Codex
 
-This plugin is for Claude Code users who want to delegate code reviews or tasks to the
+This plugin is for Claude Code and Codex users who want to delegate code reviews or tasks to the
 local OpenCode CLI ([opencode.ai](https://opencode.ai)).
 
 ## What You Get
